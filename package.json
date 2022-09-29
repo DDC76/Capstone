@@ -16,6 +16,12 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "parcel": "^2.7.0",
     "yargs-parser": ">=13.1.2"
   }
 }
+"scripts": {
+    "parcel-build": "parcel build index.html && cp _redirects ./dist/",
+    "serve": "parcel index.html"
+  },
+...
