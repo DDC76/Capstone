@@ -1,4 +1,4 @@
 export default {
-    header: "Lets Ride!"
-    view: "About"
-}
+  header: "Let's Roll!",
+  view: "About"
+};
