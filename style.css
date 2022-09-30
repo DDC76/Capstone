@@ -1,10 +1,11 @@
 #motoMeetup {
-    background: url(/Users/DEIONNE/Code/SavvyCoders/Capstone/assets/bike_event1.jpeg) center center no-repeat;  background-size: cover;
+    background: url(/Users/DEIONNE/Code/SavvyCoders/Capstone/assets/Leader_Group Rider.jpeg) center center no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100%;
   }
 
   #motoMeetup > h2 {
