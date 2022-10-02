@@ -4,79 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Savvy Coders Apr. 2020 Cohort</title>
+  <title>MotoMeetup - Capstone Project 2022</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="container">
-        <div id="siteAlert">
-          <div id="siteAlertContent"></div>
-    <div></div>
-    
-    <h1>MOTOMEETUP</h1>
-    <br>  
-    <nav> 
-      <ul>
-      <li>   
-      <a href="#"> Home </a>  
-      </li>
-      <li>
-      <a href="#"> About </a>  
-      </li>  
-      <li>  
-      <a href="#"> Contact </a>  
-      </li>  
-      <li> <a href="#"> Terms of use </a>  
-      </li>  
-      <li>  
-      <a href="#"> Join Us </a>  
-      </li>  
-      </ul>  
-      </nav>  
-      <body>
-      <title>MotoMeetup | Motorcycle Social Network, GPS Route Tracking & Planning App &amp; Riding Maps</title>
-    
-        <link href=file:///Users/DEIONNE/Desktop/th-3.jpg>
-     
-    
-      
   <header>
-    <h1>MotoMeetup SPA</h1>
+    <h1>MOTOMEETUP</h1>
+    <h3>The social network for motorcycle riders!</h3>
   </header>
   <nav>
     <i class="fas fa-bars"></i>
     <ul class="hidden--mobile nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="About.html">About</a></li>
-      <li><a href= "Groups.html">Groups</a></li>
-      <li><a href= "Maps.html">Maps</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href= "maps.html">Maps</a></li>
+      <li><a href= "groups.html">Groups</a></li>
     </ul>
   </nav>
-  <section id="Groups">
-    <form id="Groups" method="POST" action="">
-      <h2>Let's Roll!</h2>
+  <section id="groups">
+    <form id="groups" method="POST" action="">
+      <h2>Let's plan a ride!</h2>
       <div>
-        <label for="">Group Rides:</label>
-        <select id="Groups" name="Groups">
-          <option value="">Find a fellow rider</option>
-          <option value="Buddy-Ride">Find a Buddy</option>
-          <option value="Group-create">Create a Group</option>
-          <option value="Event-create">Create an Event</option>
-                  </select>
+        <label for="invite">Invite Riders:</label>
+        <select id="createRide" name="createRide">
+          <option value="">Select Group</option>
+          <option value="family">Family</option>
+          <option value="friends">Friends</option>
+          <option value="create">Create Group</option>
+          <option value="locate">Local Riders</option>
+        </select>
       </div>
       <div>
-        >
+        <label for="meetup">Location:</label>
+        <input
+          type="text"
+          name="meetup"
+          id="meetup"
+          placeholder="Meetup Location"
+          required
+        />
+      </div>
+      <div>
+        <label for="time">Time:</label>
+        <input
+          type="text"
+          name="time"
+          id="time"
+          placeholder="Meetup Time"
+          required
+        />
+      </div>
+      <div>
+        <label for="rsvp">Participants:</label>
+        <input
+          type="checkbox"
+          id="id_of_checkbox1"
+          class="items1"
+          name="rsvp"
+          value="Denver"
+        />
+        <label for="top1">Denver</label>
+        <input
+          type="checkbox"
+          id="id_of_checkbox2"
+          class="items1"
+          name="rsvp"
+          value="Nikki"
+        />
+        <label for="top2">Nikki</label>
+        <input
+          type="checkbox"
+          id="id_of_checkbox3"
+          class="items1"
+          name="rsvp"
+          value="Brian"
+        />
+        <label for="top3">Brian</label>
+        <input
+          type="checkbox"
+          id="id_of_checkbox4"
+          class="items1"
+          name="rsvp"
+          value="Adam"
+        />
+        <label for="top4">Adam</label>
+        <input
+          type="checkbox"
+          id="id_of_checkbox5"
+          class="items1"
+          name="rsvp"
+          value="Lisa"
+        />
+        <label for="top5">Lisa</label>
       </div>
       <input
         type="hidden"
-        name="customer"
-        id="customer"
-        value="Anonymous Customer"
+        name="creator"
+        id="creator"
+        value="Group Organizer"
       />
-      <input type="submit" name="submit" value="Submit Pizza" />
+      <input type="submit" name="submit" value="Submit Group Invite" />
     </form>
   </section>
   <footer>

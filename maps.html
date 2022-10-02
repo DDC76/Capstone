@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Moto Meetup - Where Bikers Connect</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
-  </head>
-
-    <body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Savvy Coders Apr. 2020 Cohort</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
   <header>
     <h1>MOTOMEETUP</h1>
     <h3>The social network for motorcycle riders!</h3>
@@ -26,25 +25,17 @@
     </ul>
   </nav>
   <section id="maps">
-    <form id="maps" method="POST" action="">
-      <h2>Routes and Rides</h2>
-      <div>
-        <label for="local">Local:</label>
-        <select id="local" name="local">
-          <option value="">Select a Location</option>
-          <option value="local">Zip Code</option>
-          <option value="travel">Out of State</option>
-          <option value="plannedRides">Create a Ride</option>
-        </select>
-      </div>
-      <h2>Let's plan a route</h2>
-<div>
-<label for="Location">Map:</label>
-        <select id="Local" name="Rides">
-          <option value="">Let's go for a Ride</option>
-            </select>
-      </div>
-
+    <table id="maps">
+      <tr>
+        <th>Created Rides</th>
+        <th>Rides Created by Users</th>
+        <th>Create New Ride</th>
+        <th>Planned Rides</th>
+        <th>Open Roads</th>
+      </tr>
+    </table>
+  </section>
+  <footer>
     &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
   </footer>
   <script src="index.js"></script>

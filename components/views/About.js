@@ -4,11 +4,12 @@ export default state => html`
   <section id="About">
   <h2>MotoMeetup</h2>
     <img
-      src="assets/Leader_Group Rider.jpeg"
+      src="/Users/DEIONNE/Code/SavvyCoders/Capstone/assets/bike_event1.jpeg"
       alt="Let's Roll"
     />
     <p>
-    Our mission at MotoMeetup is to create the best possible app experience for motorcyclists who love to ride. MotoMeetup combines social, tracking and safety functions. Communicate with other riders, create group rides and invite friends, find new roads, create your own routes, and track you rides.
+    Our mission at MotoMeetup is to create an awesome networking experience for motorcyclists who love to ride.
+     MotoMeetup combines social, tracking and safety functions. Communicate with other riders, create group rides and invite friends, find new roads, create your own routes, and track you rides.
     </p>
 
     <p>
