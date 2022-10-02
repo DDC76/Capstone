@@ -1,4 +1,4 @@
 export default {
-    header: "Let's find some riders",
-    view: "Group Rides"
-  };
+  header: "Let's find some riders",
+  view: "Groups"
+};
