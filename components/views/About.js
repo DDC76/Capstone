@@ -4,7 +4,7 @@ export default state => html`
   <section id="About">
   <h2>MotoMeetup</h2>
     <img
-      src="/Users/DEIONNE/Code/SavvyCoders/Capstone/assets/bike_event1.jpeg"
+      src="assets/Group_rider1.jpeg"
       alt="Let's Roll"
     />
     <p>
