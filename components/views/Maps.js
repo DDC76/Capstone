@@ -9,12 +9,13 @@ export default st => `
         <th>Planned Rides</th>
         <th>Open Roads</th>
       </tr>
-${st.maps
-  .map(maps => {
-    return `<tr><td>${maps.createRide}</td><td>${maps.meetup}</td><td>${
-      maps.time
-    }</td><td>${maps.rsvp.join(" & ")}</td><td>${maps.creator}</td></tr>`;
-  })
-  .join("")}
+</table>
+<section id="maps">;`;
 
-</table> `;
+// ${st.maps
+//   .map(maps => {
+//     return `<tr><td>${maps.createRide}</td><td>${maps.meetup}</td><td>${
+//       maps.time
+//     }</td><td>${maps.rsvp.join(" & ")}</td><td>${maps.creator}</td></tr>`;
+//   })
+//   .join("")}

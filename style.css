@@ -1,5 +1,5 @@
 #motoMeetup {
-    background: url(/Users/DEIONNE/Code/SavvyCoders/Capstone/assets/Leader_Group Rider.jpeg) center center no-repeat;
+    background: url(assets/bike_event1.jpeg) center center no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
     margin: 1rem 1rem;
   }
 
-  #bio {
+  #about {
     margin: 1rem;
   }
 
@@ -66,6 +66,9 @@
 
   #maps td,th {
     width: 25%;
+  }
+  #map {
+     height: 180px;
   }
 
   @media (max-width: 549px){
@@ -96,7 +99,7 @@
       list-style-type: none;
     }
 
-    #bio img {
+    #about img {
       float: left;
       width: 40%;
       height: auto;
@@ -127,7 +130,7 @@
       margin-right: 3rem;
     }
 
-    #bio img {
+    #about img {
       float: left;
       width: 25%;
       height: auto;
