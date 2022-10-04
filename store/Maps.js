@@ -1,4 +1,4 @@
 export default {
-    header: "Map your ride",
-    view: "Maps"
-  };
+  header: "Map your ride",
+  view: "Maps"
+};

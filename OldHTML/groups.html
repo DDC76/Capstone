@@ -1,17 +1,40 @@
-import html from "html-literal";
-
-export default state => html`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MotoMeetup - Capstone Project 2022</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>MOTOMEETUP</h1>
+    <h3>The social network for motorcycle riders!</h3>
+  </header>
+  <nav>
+    <i class="fas fa-bars"></i>
+    <ul class="hidden--mobile nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href= "maps.html">Maps</a></li>
+      <li><a href= "groups.html">Groups</a></li>
+    </ul>
+  </nav>
   <section id="groups">
     <form id="groups" method="POST" action="">
-      <h2>Create a Group</h2>
+      <h2>Let's plan a ride!</h2>
       <div>
         <label for="invite">Invite Riders:</label>
-        <select id="groups" name="groups">
+        <select id="createRide" name="createRide">
           <option value="">Select Group</option>
           <option value="family">Family</option>
           <option value="friends">Friends</option>
-          <option value="create">Make Group</option>
-          <option value="locate">Area Riders</option>
+          <option value="create">Create Group</option>
+          <option value="locate">Local Riders</option>
         </select>
       </div>
       <div>
@@ -86,4 +109,9 @@ export default state => html`
       <input type="submit" name="submit" value="Submit Group Invite" />
     </form>
   </section>
-`;
+  <footer>
+    &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>

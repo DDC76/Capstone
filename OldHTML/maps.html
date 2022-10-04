@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Savvy Coders Apr. 2020 Cohort</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+</head>
+<body>
+  <header>
+    <h1>MOTOMEETUP</h1>
+    <h3>The social network for motorcycle riders!</h3>
+  </header>
+  <nav>
+    <i class="fas fa-bars"></i>
+    <ul class="hidden--mobile nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href= "maps.html">Maps</a></li>
+      <li><a href= "groups.html">Groups</a></li>
+    </ul>
+  </nav>
+  <section id="maps">
+    <table id="maps">
+      <tr>
+        <th>Created Rides</th>
+        <th>Rides Created by Users</th>
+        <th>Create New Ride</th>
+        <th>Planned Rides</th>
+        <th>Open Roads</th>
+      </tr>
+    </table>
+  </section>
+
+  <section id="map">
+    <div id="map"></div>
+    <p>Start here!</p>
+</section>
+  <footer>
+    &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
+  </footer>
+  <script src="index.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+     integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+     crossorigin=""></script>
+</body>
+</html>

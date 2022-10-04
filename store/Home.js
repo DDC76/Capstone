@@ -1,5 +1,5 @@
 export default {
-    header: "My Home Page",
-    view: "Home"
-  };
-  
+  header: "MotoMeetup",
+  view: "Home",
+  weather: {}
+};
