@@ -2,11 +2,14 @@ import html from "html-literal";
 
 export default state => html`
   <section id="About">
-  <h2>MotoMeetup</h2>
-    <img
+  <div class="box">
+  <div class="float">
+
+  <h2>MotoMeetup - Social Network for Motorcyclists</h2>
+    <img class="group-rider"
       src="assets/Group_rider1.jpeg"
-      alt="Let's Roll"
-    />
+      alt="Let's Roll"/>
+      </div>
     <p>
     Our mission at MotoMeetup is to create an awesome networking experience for motorcyclists who love to ride.
      MotoMeetup combines social, tracking and safety functions. Communicate with other riders, create group rides and invite friends, find new roads, create your own routes, and track you rides.
@@ -22,5 +25,6 @@ export default state => html`
         </ol>
 
     </p>
+    </div>
   </section>
 `;
