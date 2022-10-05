@@ -1,5 +1,5 @@
 export default {
-  header: "MotoMeetup",
+  header: "",
   view: "Home",
   weather: {}
 };

@@ -6,8 +6,8 @@ export default state => html`
   <div class="float">
 
   <h2>MotoMeetup - Social Network for Motorcyclists</h2>
-    <img class="group-rider"
-      src="assets/Group_rider1.jpeg"
+  <img class="groupRider"
+      src="assets/motorcycle-group1.jpeg"
       alt="Let's Roll"/>
       </div>
     <p>

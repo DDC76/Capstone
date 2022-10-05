@@ -1,7 +1,11 @@
-#motoMeetup, html {
+.html {
+  display: flex;
+}
+
+#motoMeetup {
     background: url(assets/bike_event1.jpeg) center center no-repeat;
     background-size: cover;
-    margin-top: 1in;
+    margin-top: .25in;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,20 +16,20 @@
   #motoMeetup > h2 {
     color: rgb(247, 216, 92);
     text-align: start;
-    display: block;
+    display: inline flow;
     font-size: 4.5em;
-    margin-block-start: 3.6in;
-    margin-block-end: 6in;
+    margin-block-start: 3in;
+    margin-block-end: 8in;
     margin-inline-start: 200px;
     margin-inline-end: 200px;
-    margin-top: -30px;
+    margin-top: .5em;
     margin-left: .75em;
     font-weight: bold;
   }
 
   .weather > h3 {
     text-align: start;
-    color: rgb(93, 242, 93);
+    color: rgb(185, 0, 0);
     padding-left: 2em;
   }
 
@@ -56,6 +60,9 @@
 
   footer {
     margin: 3rem;
+  }
+  header {
+    margin: 2rem;
   }
 
   .box {
@@ -110,6 +117,7 @@
       display: flex;
       align-items: center;
       flex-direction: column;
+      grid-row: auto;
 
     }
 
@@ -164,13 +172,13 @@
       margin-right: 3rem;
     }
 
-   .group-rider {
+   .groupRider {
       float: none;
       width: 100%;
       height: auto;
     }
   }
-  .group-rider {
+  .groupRider {
     width: 250px;
 }
 
