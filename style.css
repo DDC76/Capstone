@@ -5,10 +5,7 @@
 #motoMeetup {
     background: url(assets/bike_event1.jpeg) center center no-repeat;
     background-size: cover;
-<<<<<<< HEAD:style.css
-=======
     margin-top: .25in;
->>>>>>> development:styles.css
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,11 +15,6 @@
 
   #motoMeetup > h2 {
     color: rgb(247, 216, 92);
-<<<<<<< HEAD:style.css
-    text-align: center;
-  }
-
-=======
     text-align: start;
     display: inline flow;
     font-size: 4.5em;
@@ -41,7 +33,6 @@
     padding-left: 2em;
   }
 
->>>>>>> development:styles.css
   #motoMeetup > a {
     text-decoration: none;
     color: rgb(247, 216, 92);
@@ -80,12 +71,6 @@
     display: flow-root;
   }
 
-<<<<<<< HEAD:style.css
-  #about {
-    margin: 1rem;
-  }
-
-=======
   .float > nav {
     float: left;
     width: 500px;
@@ -99,7 +84,6 @@
     margin: 10rem;
   }
 
->>>>>>> development:styles.css
   #Maps {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
@@ -155,11 +139,7 @@
       list-style-type: none;
     }
 
-<<<<<<< HEAD:style.css
-    #about img {
-=======
     #about > img {
->>>>>>> development:styles.css
       float: left;
       width: 100%;
       height: auto;
@@ -192,22 +172,13 @@
       margin-right: 3rem;
     }
 
-<<<<<<< HEAD:style.css
-    #about img {
-      float: left;
-      width: 25%;
-=======
    .groupRider {
       float: none;
       width: 100%;
->>>>>>> development:styles.css
       height: auto;
     }
   }
-<<<<<<< HEAD:style.css
-=======
   .groupRider {
     width: 250px;
 }
 
->>>>>>> development:styles.css
