@@ -1,4 +1,4 @@
 export default {
-  header: "Let's Roll!",
+  header: " ",
   view: "About"
 };

@@ -66,22 +66,23 @@
   }
 
   .box {
-    background-color: #fd580bc7;
+    background-color: #cba900;
     border: 5px solid rgb(0, 0, 0);
     display: flow-root;
+    padding: 30px 30px 30px 50px;
+
   }
 
   .float > nav {
-    float: left;
+    float: inline-start;
     width: 500px;
     height: 200px;
     background-color: rgba(255, 255, 255, 0.709);
     border: 1px solid black;
-    padding: 20px;
   }
 
   #about {
-    margin: 10rem;
+    margin: 1rem;
   }
 
   #Maps {
@@ -139,11 +140,10 @@
       list-style-type: none;
     }
 
-    #about > img {
+    #about img {
       float: left;
       width: 100%;
-      height: auto;
-      margin-right: 20rem;
+      margin-right: 5rem;
     }
   }
 
@@ -168,17 +168,21 @@
       display: none;
     }
 
-    #bio {
-      margin-right: 3rem;
+    #about {
+      margin-right: 10rem;
     }
 
-   .groupRider {
-      float: none;
-      width: 100%;
+    #about img {
+      float: inline-start;
+      width: 25%;
       height: auto;
+      margin-right: 1rem;
     }
   }
-  .groupRider {
-    width: 250px;
-}
 
+p {
+  font-size: 20px;
+}
+ul {
+  font-size: 20px;
+}
