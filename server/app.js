@@ -56,8 +56,8 @@ app.get("/echo/:input", (request, response) => {
 
 app.use("/Myriders", myRiders);
 
-const PORT = process.env.API_PORT || 4040;
+const PORT = process.env.PORT || 4040;
 // we use || to provide a default value
 
 // Let the humans know I am running and listening on 4040
-app.listen(4040, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
