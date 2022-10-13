@@ -22,11 +22,49 @@ function render(state = store.Home) {
   router.updatePageLinks();
 }
 
-function afterRender(state) {
+function afterRender(st) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+
+  if (st.view === "Groups") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const items = [];
+      // Interate over the items input group elements
+      for (let input of inputList.items) {
+        // If the value of the checked attribute is true then add the value to the items array
+        if (input.checked) {
+          items.push(input.value);
+        }
+      }
+
+      const requestData = {
+        customer: inputList.customer.value,
+        invite: inputList.invite.value,
+        meetup: inputList.meetup.value,
+        time: inputList.time.value,
+        items: items
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.MOTO_MEETUP_API_URL}`, requestData)
+        .then(response => {
+          // Push the new group onto the Groups state groups attribute, so it can be displayed in the myRiders list
+          store.Myriders.myRiders.push(response.data);
+          router.navigate("/Myriders");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 router.hooks({
   before: (done, params) => {

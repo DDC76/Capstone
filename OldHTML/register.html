@@ -11,6 +11,67 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-
+  <header>
+    <h1>MOTOMEETUP</h1>
+    <h3>The social network for motorcycle riders!</h3>
+  </header>
+  <nav>
+    <i class="fas fa-bars"></i>
+    <ul class="hidden--mobile nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href= "groups.html">Create a Ride</a></li>
+      <li><a href= "myriders.html">My Riders</a></li>
+      <li><a href= "maps.html">Maps</a></li>
+      <li><a href= "register.html">Register</a></li>
+      <li><a href= "sign-in.html">Sign-in</a></li>
+      <li><a href= "sign-out.html">Sign-out</a></li>
+    </ul>
+  </nav>
+<section id="register">
+<section onload="document.registration.userid.focus();">
+<h1>Registration Form</h1>
+Use tab keys to move from one input field to the next.
+<form name='registration' onSubmit="return formValidation();">
+<ul>
+<li><label for="userid">User id:</label></li>
+<li><input type="text" name="userid" size="12" /></li>
+<li><label for="passid">Password:</label></li>
+<li><input type="password" name="passid" size="12" /></li>
+<li><label for="username">Name:</label></li>
+<li><input type="text" name="username" size="50" /></li>
+<li><label for="address">Address:</label></li>
+<li><input type="text" name="address" size="50" /></li>
+<li><label for="country">Country:</label></li>
+<li><select name="country">
+<option selected="" value="Default">(Please select a country)</option>
+<option value="AF">Australia</option>
+<option value="AL">Canada</option>
+<option value="DZ">India</option>
+<option value="AS">Russia</option>
+<option value="AD">USA</option>
+</select></li>
+<li><label for="zip">ZIP Code:</label></li>
+<li><input type="text" name="zip" /></li>
+<li><label for="email">Email:</label></li>
+<li><input type="text" name="email" size="50" /></li>
+<li><label id="gender">Sex:</label></li>
+<li><input type="radio" name="msex" value="Male" /><span>Male</span></li>
+<li><input type="radio" name="fsex" value="Female" /><span>Female</span></li>
+<li><label>Language:</label></li>
+<li><input type="checkbox" name="en" value="en" checked /><span>English</span></li>
+<li><input type="checkbox" name="nonen" value="noen" /><span>Non English</span></li>
+<li><label for="desc">About:</label></li>
+<li><textarea name="desc" id="desc"></textarea></li>
+<li><input type="submit" name="submit" value="Submit" /></li>
+</ul>
+</form>
+</section>
+</section>
+<footer>
+  &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
+</footer>
+<script src="index.js"></script>
+<script src="sample-registration-form-validation.js"></script>
 </body>
 </html>
