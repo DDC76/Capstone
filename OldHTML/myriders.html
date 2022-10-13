@@ -9,10 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
-     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-     crossorigin=""/>
-</head>
+ </head>
 <body>
   <header>
     <h1>MOTOMEETUP</h1>
@@ -27,19 +24,30 @@
       <li><a href= "myriders.html">My Riders</a></li>
       <li><a href= "maps.html">Maps</a></li>
       <li><a href= "register.html">Register</a></li>
-      <li><a href= "sign-in.html">Sign-in</a></li>
-      <li><a href= "sign-out.html">Sign-out</a></li>
+      <li><a href= "signIn.html">Sign-in</a></li>
+      <li><a href= "signOut.html">Sign-out</a></li>
     </ul>
   </nav>
-  <section id="maps">
+  <section id="myRiders">
+    <table id="myRiders">
+      <tr>
+        <th>Group</th>
+        <th>Riders</th>
+        <th>Location</th>
+        <th>Time</th>
+        <th>SuggestedItems</th>
+        <th>InvitedBy</th>
+      </tr>
+    </table>
+  </section>
 
+  <section id="myRiders">
+    <div id="myRiders"></div>
+    <p>Start here!</p>
 </section>
   <footer>
     &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
   </footer>
-  <script src="index.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
-     integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
-     crossorigin=""></script>
-</body>
+  <scrip src="index.js"></script>
+ </body>
 </html>

@@ -143,6 +143,7 @@
     #about img {
       float: left;
       width: 100%;
+      height: auto;
       margin-right: 5rem;
     }
   }

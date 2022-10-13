@@ -10,8 +10,8 @@ export default state => html`
           <option value="">Select Group</option>
           <option value="family">Family</option>
           <option value="friends">Friends</option>
-          <option value="create">Make Group</option>
-          <option value="locate">Area Riders</option>
+          <option value="create">New Group</option>
+          <option value="locate">Single Rider</option>
         </select>
       </div>
       <div>
@@ -35,47 +35,47 @@ export default state => html`
         />
       </div>
       <div>
-        <label for="rsvp">Participants:</label>
+        <label for="rsvp">Suggested Items:</label>
         <input
           type="checkbox"
           id="id_of_checkbox1"
           class="items1"
-          name="rsvp"
-          value="Denver"
+          name="suggestedItems"
+          value="Helmet"
         />
-        <label for="top1">Denver</label>
+        <label for="top1">Helmet</label>
         <input
           type="checkbox"
           id="id_of_checkbox2"
           class="items1"
-          name="rsvp"
-          value="Nikki"
+          name="suggestedItems"
+          value="Gloves"
         />
-        <label for="top2">Nikki</label>
+        <label for="top2">Gloves</label>
         <input
           type="checkbox"
           id="id_of_checkbox3"
           class="items1"
-          name="rsvp"
-          value="Brian"
+          name="suggestedItems"
+          value="Jacket"
         />
-        <label for="top3">Brian</label>
+        <label for="top3">Jacket</label>
         <input
           type="checkbox"
           id="id_of_checkbox4"
           class="items1"
-          name="rsvp"
-          value="Adam"
+          name="suggestedItems"
+          value="Boots"
         />
-        <label for="top4">Adam</label>
+        <label for="top4">Boots</label>
         <input
           type="checkbox"
           id="id_of_checkbox5"
           class="items1"
-          name="rsvp"
-          value="Lisa"
+          name="suggestedItems"
+          value="Backpack"
         />
-        <label for="top5">Lisa</label>
+        <label for="top5">Backpack</label>
       </div>
       <input
         type="hidden"
@@ -83,7 +83,7 @@ export default state => html`
         id="creator"
         value="Group Organizer"
       />
-      <input type="submit" name="submit" value="Submit Group Invite" />
+      <input type="submit" name="submit" value="Submit Invite" />
     </form>
   </section>
 `;

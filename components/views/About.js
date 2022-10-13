@@ -12,7 +12,7 @@ export default state => html`
       </div>
     <p>
     Our mission is to create an awesome networking experience for motorcyclists who love to ride.
-    MotoMeetup combines social, tracking and safety functions. Communicate with other riders, create group rides and invite friends, find new roads, create your own routes, and track you rides.
+    Communicate with other riders, create group rides and invite friends, find new routes or create your own!
     </p>
 
     <p>

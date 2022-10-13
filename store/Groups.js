@@ -1,4 +1,4 @@
 export default {
-  header: "Let's find some riders",
+  header: " ",
   view: "Groups"
 };
