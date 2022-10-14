@@ -43,10 +43,10 @@ router.put("/:id", (request, response) => {
     {
       $set: {
         // Take note that the customer is not included, so it can't
-        invite: body.invite,
+        group: body.group,
         meetup: body.meetup,
         time: body.time,
-        items: body.items
+        suggestedItems: body.suggestedItems
       }
     },
     {

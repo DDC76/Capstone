@@ -5,7 +5,7 @@ export default state => html`
     <form id="groups" method="POST" action="">
       <h2>Create a Group</h2>
       <div>
-        <label for="invite">Invite Riders:</label>
+        <label for="groups">Invite Riders:</label>
         <select id="groups" name="groups">
           <option value="">Select Group</option>
           <option value="family">Family</option>
@@ -35,7 +35,7 @@ export default state => html`
         />
       </div>
       <div>
-        <label for="rsvp">Suggested Items:</label>
+        <label for="suggestedItems">Suggested Items:</label>
         <input
           type="checkbox"
           id="id_of_checkbox1"
