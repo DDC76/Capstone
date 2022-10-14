@@ -1,5 +1,5 @@
 export default {
-  header: "Let's Ride",
+  header: " ",
   view: "Myriders",
   myRiders: []
 };

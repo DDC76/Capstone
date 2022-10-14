@@ -1,12 +1,12 @@
 import html from "html-literal";
 
-export default st => `
+export default st => html`
   <table id="myRiders">
     <tr>
       <th>Group</th>
       <th>Meetup</th>
       <th>Time</th>
-      <th>SuggestedItems</th>
+      <th>Suggested Items</th>
       <th>Creator</th>
     </tr>
 
