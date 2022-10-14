@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 const motoSchema = new mongoose.Schema({
-  customer: {
+  creator: {
     type: String,
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
   },
-  invite: {
+  groups: {
     type: String,
     required: true,
     enum: ["Family", "Friends", "New Group", "Single Rider"]
@@ -20,7 +20,7 @@ const motoSchema = new mongoose.Schema({
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
   },
-  items: [String]
+  suggestedItems: [String]
 });
 
 const Myriders = mongoose.model("Myriders", motoSchema);

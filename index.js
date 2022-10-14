@@ -35,12 +35,12 @@ function afterRender(st) {
       const inputList = event.target.elements;
       console.log("Input Element List", inputList);
 
-      const items = [];
+      const suggestedItems = [];
       // Interate over the items input group elements
-      for (let input of inputList.items) {
+      for (let input of inputList.suggestedItems) {
         // If the value of the checked attribute is true then add the value to the items array
         if (input.checked) {
-          items.push(input.value);
+          suggestedItems.push(input.value);
         }
       }
 
@@ -49,7 +49,7 @@ function afterRender(st) {
         invite: inputList.invite.value,
         meetup: inputList.meetup.value,
         time: inputList.time.value,
-        items: items
+        suggestedItems: suggestedItems
       };
       console.log("request Body", requestData);
 
@@ -57,7 +57,7 @@ function afterRender(st) {
         .post(`${process.env.MOTO_MEETUP_API_URL}`, requestData)
         .then(response => {
           // Push the new group onto the Groups state groups attribute, so it can be displayed in the myRiders list
-          store.Myriders.myRiders.push(response.data);
+          store.Myriders.Myriders.push(response.data);
           router.navigate("/Myriders");
         })
         .catch(error => {
