@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default state => `
+export default state => html`
   <div class="openBtn">
     <button class="openButton" onclick="openForm()">
       <strong>Open Form</strong>

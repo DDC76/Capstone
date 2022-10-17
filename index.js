@@ -45,8 +45,7 @@ function afterRender(st) {
       }
 
       const requestData = {
-        customer: inputList.customer.value,
-        invite: inputList.invite.value,
+        groups: inputList.groups.value,
         meetup: inputList.meetup.value,
         time: inputList.time.value,
         suggestedItems: suggestedItems

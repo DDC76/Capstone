@@ -1,7 +1,7 @@
 import html from "html-literal";
 
-export default state => `
-  < id="register">
+export default state => html`
+  <!-- <id="register"> -->
   <form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
   <fieldset id="fs-frm-inputs">
     <label for="full-name">Full Name</label>
