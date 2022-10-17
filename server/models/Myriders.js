@@ -18,7 +18,7 @@ const motoSchema = new mongoose.Schema({
   time: {
     type: String,
     required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z0-9 :]*$/
   },
   suggestedItems: [String]
 });

@@ -1,7 +1,7 @@
 // 'Import' the Express module instead of http
 const express = require("express");
 const dotenv = require("dotenv");
-const myRiders = require("./routers/Myriders");
+const myRiders = require("./routers/myrider");
 const mongoose = require("mongoose");
 
 dotenv.config();
