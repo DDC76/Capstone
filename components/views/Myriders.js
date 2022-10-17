@@ -12,7 +12,7 @@ export default st => html`
 
     ${st.myRiders
       .map(myRider => {
-        return `<tr><td>${myRider.group}</td><td>${myRider.meetup}</td><td>${
+        return `<tr><td>${myRider.groups}</td><td>${myRider.meetup}</td><td>${
           myRider.time
         }</td><td>${myRider.suggestedItems.join(" & ")}</td><td>${
           myRider.creator

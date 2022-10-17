@@ -45,6 +45,7 @@ function afterRender(st) {
       }
 
       const requestData = {
+        creator: inputList.creator.value,
         groups: inputList.groups.value,
         meetup: inputList.meetup.value,
         time: inputList.time.value,
@@ -56,7 +57,7 @@ function afterRender(st) {
         .post(`${process.env.MOTO_MEETUP_API_URL}`, requestData)
         .then(response => {
           // Push the new group onto the Groups state groups attribute, so it can be displayed in the myRiders list
-          store.Myriders.Myriders.push(response.data);
+          store.Myriders.myRiders.push(response.data);
           router.navigate("/Myriders");
         })
         .catch(error => {
@@ -97,6 +98,18 @@ router.hooks({
             done();
           })
           .catch(err => console.log(err));
+        break;
+      case "Myriders":
+        axios
+          .get(`${process.env.MOTO_MEETUP_API_URL}`)
+          .then(response => {
+            store.Myriders.myRiders = response.data;
+            done();
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
         break;
       default:
         done();

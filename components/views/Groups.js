@@ -8,10 +8,10 @@ export default state => html`
         <label for="groups">Invite Riders:</label>
         <select id="groups" name="groups">
           <option value="">Select Group</option>
-          <option value="family">Family</option>
-          <option value="friends">Friends</option>
-          <option value="create">New Group</option>
-          <option value="locate">Single Rider</option>
+          <option value="Family">Family</option>
+          <option value="Friends">Friends</option>
+          <option value="New Group">New Group</option>
+          <option value="Single Rider">Single Rider</option>
         </select>
       </div>
       <div>
