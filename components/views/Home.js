@@ -3,7 +3,7 @@ import html from "html-literal";
 export default state => html`
   <section id="motoMeetup">
     <h2>MotoMeetup: Social Network for Motorcyclists</h2>
-    <a href="index.html">"Register Here!"</a>
+    <a href="/Register" title="Register" data-navigo="">Register</a>
   </section>
   <div class="weather">
     <h3>

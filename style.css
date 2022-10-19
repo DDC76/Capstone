@@ -189,6 +189,11 @@ ul {
   font-size: 20px;
 }
 
+.items1 > label {
+  margin-top: 3em;
+  display: table-row;
+}
+
 /* NEW FORM CSS*/
 /* reset */
 form input,
@@ -203,9 +208,9 @@ form label,
   color: inherit;
   border: none;
   border-radius: 0;
-  display: block;
+  display: grid;
   width: 100%;
-  padding: 0;
+  padding: 1em;
   margin: 0;
   -webkit-appearance: radio;
   -moz-appearance: none;
@@ -260,3 +265,9 @@ form [type="reset"]:focus {
 form select {
   text-transform: none;
 }
+#map {
+  margin: 0;
+  padding: 0;
+  height: 60vh;
+}
+

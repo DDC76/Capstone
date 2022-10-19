@@ -1,9 +1,8 @@
 import html from "html-literal";
 
-export default state => `
-<section id="sign-out">
+export default state => html`
+<section id="signOut">
   <input type="submit" class="btn btn-green btn-sm pull-right" value="Submit">
-
   <div>
     <script>
       let inactivityTime = function() {

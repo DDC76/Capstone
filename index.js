@@ -4,6 +4,7 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
+import { Loader } from "@googlemaps/js-api-loader";
 
 dotenv.config();
 
@@ -66,63 +67,101 @@ function afterRender(st) {
     });
   }
 }
-router.hooks({
-  before: (done, params) => {
-    const view =
-      params && params.data && params.data.view
-        ? capitalize(params.data.view)
-        : "Home";
+    router.hooks({
+      before: (done, params) => {
+        const view =
+          params && params.data && params.data.view
+            ? capitalize(params.data.view)
+            : "Home";
 
-    // Add a switch case statement to handle multiple routes
-    switch (view) {
-      case "Home":
-        axios
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-          )
-          .then(response => {
-            const kelvinToFahrenheit = kelvinTemp =>
-              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+        // Add a switch case statement to handle multiple routes
+        switch (view) {
+          case "Home":
+            axios
+              .get(
+                `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+              )
+              .then(response => {
+                const kelvinToFahrenheit = kelvinTemp =>
+                  Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
-            store.Home.weather = {};
-            store.Home.weather.city = response.data.name;
-            store.Home.weather.temp = kelvinToFahrenheit(
-              response.data.main.temp
-            );
-            store.Home.weather.feelsLike = kelvinToFahrenheit(
-              response.data.main.feels_like
-            );
-            store.Home.weather.description = response.data.weather[0].main;
+                store.Home.weather = {};
+                store.Home.weather.city = response.data.name;
+                store.Home.weather.temp = kelvinToFahrenheit(
+                  response.data.main.temp
+                );
+                store.Home.weather.feelsLike = kelvinToFahrenheit(
+                  response.data.main.feels_like
+                );
+                store.Home.weather.description = response.data.weather[0].main;
 
-            console.log(response.data);
+                console.log(response.data);
+                done();
+              })
+              .catch(err => console.log(err));
+
+              switch (view) {
+                case "Maps":
+                  axios
+                    .get(
+                      `https://maps.googleapis.com/maps/api/js?key=${process.env.Map_API_KEY}&map_ids=f33fe6fe4f3894f4&callback=initMap`)
+              /* Options for how the map should initially render. */
+              const mapOptions = {
+                center: {
+                  lat: 47.649196,
+                  lng: -122.350384
+                },
+                zoom: 12
+              };
+              /* Options for loading the Maps JS API. */
+              const apiOptions = {
+                version: "weekly",
+                libraries: ["places"]
+              };
+              /*
+               * Set ID of the div where the map will be loaded,
+               * and whether to append to that div.
+               */
+              const mapLoaderOptions = {
+                apiKey: googleMapsAPIKey,
+                divId: "map",
+                append: true, // Appends to divId. Set to false to init in divId.
+                mapOptions: mapOptions,
+                apiOptions: apiOptions
+              };
+              const mapLoader = new GoogleMap();
+              // Load the map
+              mapLoader.initMap(mapLoaderOptions).then(googleMap => {
+                // returns instance of google.maps.Map
+                console.log(response.data);
+                done();
+              })
+              .catch(err => console.log(err));
+
+            break;
+          case "Myriders":
+            axios
+              .get(`${process.env.MOTO_MEETUP_API_URL}`)
+              .then(response => {
+                store.Myriders.myRiders = response.data;
+                done();
+              })
+              .catch(error => {
+                console.log("It puked", error);
+                done();
+              });
+            break;
+          default:
             done();
-          })
-          .catch(err => console.log(err));
-        break;
-      case "Myriders":
-        axios
-          .get(`${process.env.MOTO_MEETUP_API_URL}`)
-          .then(response => {
-            store.Myriders.myRiders = response.data;
-            done();
-          })
-          .catch(error => {
-            console.log("It puked", error);
-            done();
-          });
-        break;
-      default:
-        done();
-    }
-  }
-});
+        }
+      }
 
-router
-  .on({
-    "/": () => render(),
-    ":view": params => {
-      let view = capitalize(params.data.view);
-      render(store[view]);
-    }
-  })
-  .resolve();
+    router
+      .on({
+        "/": () => render(),
+        ":view": params => {
+          let view = capitalize(params.data.view);
+          render(store[view]);
+        }
+      })
+      .resolve();
