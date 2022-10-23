@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>MotoMeetup - Capstone Project 2022</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
   <header>
     <h1>MOTOMEETUP</h1>
-    <h3>The social network for motorcycle riders!</h3>
+    <h3>Plan a route!</h3>
   </header>
   <nav>
     <i class="fas fa-bars"></i>
@@ -28,33 +28,16 @@
       <li><a href= "signOut.html">Sign-out</a></li>
     </ul>
   </nav>
-  <section id="signOut">
-  <input type="submit" class="btn btn-green btn-sm pull-right" value="Submit">
 
-  <div>
-    <script>
-      let inactivityTime = function() {
-        let time;
-        window.onload = resetTimer;
-        document.onmousemove = resetTimer;
-        document.onkeypress = resetTimer;
-        function logout() {
-          alert("You are now logged out.")
-        }
-        function resetTimer() {
-          clearTimeout(time);
-          time = setTimeout(logout, 2000)
-        }
-      };
-      window.onload = function() {
-        inactivityTime();
-      }
-    </script>
-    </section>
- <footer>
-  &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
-</footer>
-<script src="index.js"></script>
-  </div>
+  <section id="maps">
+    <div id="map"></div>
+
+</section>
+  <footer>
+    &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
+  </footer>
+  <script src="index.js"></script>
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+
 </body>
 </html>

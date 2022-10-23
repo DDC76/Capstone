@@ -3,8 +3,9 @@ import html from "html-literal";
 export default state => html`
   <section id="motoMeetup">
     <h2>MotoMeetup: Social Network for Motorcyclists</h2>
-    <a href="/Register" title="Register" data-navigo="">Register</a>
+    <a href="/Register" title="Register/Sign-in" data-navigo="">Register</a>
   </section>
+
   <div class="weather">
     <h3>
       The weather in ${state.weather.city} is ${state.weather.description}.

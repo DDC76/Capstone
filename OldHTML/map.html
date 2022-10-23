@@ -1,7 +1,35 @@
-import html from "html-literal";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i|Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 
-export default store => html`
-   <!-- <title>Sign-in Here!</title>
+</head>
+<body>
+  <header>
+    <h1>MOTOMEETUP</h1>
+    <h3>The social network for motorcycle riders!</h3>
+  </header>
+  <nav>
+    <i class="fas fa-bars"></i>
+    <ul class="hidden--mobile nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href= "groups.html">Create a Ride</a></li>
+      <li><a href= "myriders.html">My Riders</a></li>
+      <li><a href= "map.html">Map</a></li>
+      <li><a href= "register.html">Register</a></li>
+
+    </ul>
+  </nav>
+    <title>Sign-in Here!</title>
     <style>
       * {
         box-sizing: border-box;
@@ -72,8 +100,8 @@ export default store => html`
   </head>
   <body>
     <h2>Sign-in</h2>
-    <p>Click on the "Sign-in" button to open the popup form.</p> -->
-    <!-- <div class="openBtn">
+    <p>Click on the "Sign-in" button to open the popup form.</p>
+    <div class="openBtn">
       <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
     </div>
     <div class="loginPopup">
@@ -92,7 +120,7 @@ export default store => html`
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>
-    </div> -->
+    </div>
     <div class="popupForm">  </div>
       function openForm() {
         document.getElementById("popupForm").style.display = "block";
@@ -101,4 +129,9 @@ export default store => html`
         document.getElementById("popupForm").style.display = "none";
       }
     </div>
-    `;
+      <footer>
+      &copy; 2020 <a href="https://savvycoders.com/">Savvy Coders</a>
+  </footer>
+  <script src="index.js"></script>
+  </body>
+</html>

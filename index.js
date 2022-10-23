@@ -4,7 +4,6 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
-import { Loader } from "@googlemaps/js-api-loader";
 
 dotenv.config();
 
@@ -23,13 +22,13 @@ function render(state = store.Home) {
   router.updatePageLinks();
 }
 
-function afterRender(st) {
+function afterRender(state) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
-  if (st.view === "Groups") {
+  if (state.view === "Groups") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
 
@@ -67,101 +66,148 @@ function afterRender(st) {
     });
   }
 }
-    router.hooks({
-      before: (done, params) => {
-        const view =
-          params && params.data && params.data.view
-            ? capitalize(params.data.view)
-            : "Home";
+// router.hooks({
+//   before: (done, params) => {
+//     const view =
+//       params && params.data && params.data.view
+//         ? capitalize(params.data.view)
+//         : "Home";
 
-        // Add a switch case statement to handle multiple routes
-        switch (view) {
-          case "Home":
-            axios
-              .get(
-                `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-              )
-              .then(response => {
-                const kelvinToFahrenheit = kelvinTemp =>
-                  Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+if (state.view === "Direction") {
+  const formEntry = document.querySelector("form");
+  const directionList = document.querySelector(".directions");
 
-                store.Home.weather = {};
-                store.Home.weather.city = response.data.name;
-                store.Home.weather.temp = kelvinToFahrenheit(
-                  response.data.main.temp
-                );
-                store.Home.weather.feelsLike = kelvinToFahrenheit(
-                  response.data.main.feels_like
-                );
-                store.Home.weather.description = response.data.weather[0].main;
+  formEntry.addEventListener("submit", async event => {
+    event.preventDefault();
 
-                console.log(response.data);
-                done();
-              })
-              .catch(err => console.log(err));
+    // directionList.classList.toggle("directions");
+    const inputList = event.target.elements;
+    console.log("Input Element List", inputList);
 
-              switch (view) {
-                case "Maps":
-                  axios
-                    .get(
-                      `https://maps.googleapis.com/maps/api/js?key=${process.env.Map_API_KEY}&map_ids=f33fe6fe4f3894f4&callback=initMap`)
-              /* Options for how the map should initially render. */
-              const mapOptions = {
-                center: {
-                  lat: 47.649196,
-                  lng: -122.350384
-                },
-                zoom: 12
-              };
-              /* Options for loading the Maps JS API. */
-              const apiOptions = {
-                version: "weekly",
-                libraries: ["places"]
-              };
-              /*
-               * Set ID of the div where the map will be loaded,
-               * and whether to append to that div.
-               */
-              const mapLoaderOptions = {
-                apiKey: googleMapsAPIKey,
-                divId: "map",
-                append: true, // Appends to divId. Set to false to init in divId.
-                mapOptions: mapOptions,
-                apiOptions: apiOptions
-              };
-              const mapLoader = new GoogleMap();
-              // Load the map
-              mapLoader.initMap(mapLoaderOptions).then(googleMap => {
-                // returns instance of google.maps.Map
-                console.log(response.data);
-                done();
-              })
-              .catch(err => console.log(err));
+    const from = {
+      street: inputList.fromStreet.value,
+      city: inputList.fromCity.value,
+      state: inputList.fromStreet.value
+    };
 
-            break;
-          case "Myriders":
-            axios
-              .get(`${process.env.MOTO_MEETUP_API_URL}`)
-              .then(response => {
-                store.Myriders.myRiders = response.data;
-                done();
-              })
-              .catch(error => {
-                console.log("It puked", error);
-                done();
-              });
-            break;
-          default:
+    store.Direction.from = from;
+    store.Map.from = from;
+
+    const to = {
+      street: inputList.toStreet.value,
+      city: inputList.toCity.value,
+      state: inputList.toStreet.value
+    };
+
+    store.Direction.to = to;
+    store.Map.to = to;
+
+    if (event.submitter.name === "showDirections") {
+      axios
+        .get(
+          `http://www.mapquestapi.com/directions/v2/route?key=${process.env.MAPQUEST_API_KEY}&from=${from.street},${from.city},${from.state}&to=${to.street},+${to.city},+${to.state}`
+        )
+        .then(response => {
+          store.Direction.directions = response.data;
+          store.Direction.directions.maneuvers =
+            response.data.route.legs[0].maneuvers;
+          router.navigate("/Direction");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    }
+
+    if (event.submitter.name === "showRoute") {
+      router.navigate("/Map");
+    }
+  });
+}
+if (state.view === "Map") {
+  /*
+    Please refer to the documentation:
+    https://developer.mapquest.com/documentation/mapquest-js/v1.3/
+  */
+
+  L.mapquest.key = process.env.MAPQUEST_API_KEY;
+
+  // 'map' refers to a <div> element with the ID map
+  const map = L.mapquest.map("map", {
+    center: [37.7749, -122.4194],
+    layers: L.mapquest.tileLayer("map"),
+    zoom: 12
+  });
+
+  map.addControl(L.mapquest.control());
+}
+
+router.hooks({
+  before: (done, params) => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    // Add a switch case statement to handle multiple routes
+    switch (view) {
+      case "Home":
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+          )
+          .then(response => {
+            const kelvinToFahrenheit = kelvinTemp =>
+              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+
+            store.Home.weather = {};
+            store.Home.weather.city = response.data.name;
+            store.Home.weather.temp = kelvinToFahrenheit(
+              response.data.main.temp
+            );
+            store.Home.weather.feelsLike = kelvinToFahrenheit(
+              response.data.main.feels_like
+            );
+            store.Home.weather.description = response.data.weather[0].main;
+
+            console.log(response.data);
             done();
-        }
-      }
+          })
+          .catch(err => console.log(err));
 
-    router
-      .on({
-        "/": () => render(),
-        ":view": params => {
-          let view = capitalize(params.data.view);
-          render(store[view]);
-        }
-      })
-      .resolve();
+        break;
+      case "Myriders":
+        axios
+          .get(`${process.env.MOTO_MEETUP_API_URL}`)
+          .then(response => {
+            store.Myriders.myRiders = response.data;
+            done();
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
+        break;
+      default:
+        done();
+    }
+  }
+});
+
+params => {
+  const view =
+    params && params.data && params.data.view
+      ? capitalize(params.data.view)
+      : "Home";
+
+  render(store[view]);
+};
+
+router
+  .on({
+    "/": () => render(),
+    ":view": params => {
+      let view = capitalize(params.data.view);
+      render(store[view]);
+    }
+  })
+  .resolve();
