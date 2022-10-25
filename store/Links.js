@@ -12,6 +12,5 @@ export default [
     text: "My Riders",
     icon: "fa-solid fa-users-viewfinder"
   },
-  { title: "Map", text: "Map A Ride", icon: "fa-solid fa-map-location-dot" },
   { title: "Register", text: "Register", icon: "fa-regular fa-id-badge" }
 ];
