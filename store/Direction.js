@@ -1,5 +1,5 @@
 export default {
-  header: "Map a Route!",
+  header: "Plan a Route!",
   view: "Direction",
   directions: []
 };

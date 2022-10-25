@@ -28,6 +28,59 @@ function afterRender(state) {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
+  if (state.view === "Direction") {
+    const formEntry = document.querySelector("form");
+    const directionList = document.querySelector(".directions");
+
+    formEntry.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      console.log("matsinet-event:", event);
+
+      // directionList.classList.toggle("directions");
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const from = {
+        street: inputList.fromStreet.value,
+        city: inputList.fromCity.value,
+        state: inputList.fromStreet.value
+      };
+
+      store.Direction.from = from;
+      store.Map.from = from;
+
+      const to = {
+        street: inputList.toStreet.value,
+        city: inputList.toCity.value,
+        state: inputList.toStreet.value
+      };
+
+      store.Direction.to = to;
+      store.Map.to = to;
+
+      if (event.submitter.name === "showDirections") {
+        axios
+          .get(
+            `http://www.mapquestapi.com/directions/v2/route?key=${process.env.MAPQUEST_API_KEY}&from=${from.street},${from.city},${from.state}&to=${to.street},+${to.city},+${to.state}`
+          )
+          .then(response => {
+            store.Direction.directions = response.data;
+            store.Direction.directions.maneuvers =
+              response.data.route.legs[0].maneuvers;
+            router.navigate("/Direction");
+          })
+          .catch(error => {
+            console.log("It puked", error);
+          });
+      }
+
+      if (event.submitter.name === "showRoute") {
+        router.navigate("/Map");
+      }
+    });
+  }
+
   if (state.view === "Groups") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
@@ -65,91 +118,6 @@ function afterRender(state) {
         });
     });
   }
-}
-
-router
-  .on({
-    "/": () => render(),
-    ":view": params => {
-      let view = capitalize(params.data.view);
-      render(store[view]);
-    }
-  })
-  .resolve();
-
-// router.hooks({
-//   before: (done, params) => {
-//     const view =
-//       params && params.data && params.data.view
-//         ? capitalize(params.data.view)
-//         : "Home";
-
-if (state.view === "Direction") {
-  const formEntry = document.querySelector("form");
-  const directionList = document.querySelector(".directions");
-
-  formEntry.addEventListener("submit", async event => {
-    event.preventDefault();
-
-    // directionList.classList.toggle("directions");
-    const inputList = event.target.elements;
-    console.log("Input Element List", inputList);
-
-    const from = {
-      street: inputList.fromStreet.value,
-      city: inputList.fromCity.value,
-      state: inputList.fromStreet.value
-    };
-
-    store.Direction.from = from;
-    store.Map.from = from;
-
-    const to = {
-      street: inputList.toStreet.value,
-      city: inputList.toCity.value,
-      state: inputList.toStreet.value
-    };
-
-    store.Direction.to = to;
-    store.Map.to = to;
-
-    if (event.submitter.name === "showDirections") {
-      axios
-        .get(
-          `http://www.mapquestapi.com/directions/v2/route?key=${process.env.MAPQUEST_API_KEY}&from=${from.street},${from.city},${from.state}&to=${to.street},+${to.city},+${to.state}`
-        )
-        .then(response => {
-          store.Direction.directions = response.data;
-          store.Direction.directions.maneuvers =
-            response.data.route.legs[0].maneuvers;
-          router.navigate("/Direction");
-        })
-        .catch(error => {
-          console.log("It puked", error);
-        });
-    }
-
-    if (event.submitter.name === "showRoute") {
-      router.navigate("/Map");
-    }
-  });
-}
-if (state.view === "Map") {
-  /*
-    Please refer to the documentation:
-    https://developer.mapquest.com/documentation/mapquest-js/v1.3/
-  */
-
-  L.mapquest.key = process.env.MAPQUEST_API_KEY;
-
-  // 'map' refers to a <div> element with the ID map
-  const map = L.mapquest.map("map", {
-    center: [37.7749, -122.4194],
-    layers: L.mapquest.tileLayer("map"),
-    zoom: 12
-  });
-
-  map.addControl(L.mapquest.control());
 }
 
 router.hooks({
@@ -203,15 +171,6 @@ router.hooks({
     }
   }
 });
-
-params => {
-  const view =
-    params && params.data && params.data.view
-      ? capitalize(params.data.view)
-      : "Home";
-
-  render(store[view]);
-};
 
 router
   .on({
