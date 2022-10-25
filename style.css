@@ -1,6 +1,6 @@
-.html {
+/* .html {
   display: flex;
-}
+} */
 
 #motoMeetup {
     background: url(assets/bike_event1.jpeg) center center no-repeat;
@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 150vh;
   }
 
   #motoMeetup > h2 {
@@ -173,8 +173,12 @@ form > input[type="submit"] {
       display: none;
     }
 
-   nav > span {
-      color:rgb(185, 0, 0)
+    nav > .fa-ul {
+      display: inline-block;
+    }
+
+   nav > .span {
+      display: inline-block;
     }
 
     #about {
