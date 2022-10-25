@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default state => html`
+export default () => html`
   <section id="About">
   <div class="box">
   <div class="float">

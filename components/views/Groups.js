@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default state => html`
+export default () => html`
   <section id="groups">
     <form id="groups" method="POST" action="">
       <h2>Create a Group</h2>

@@ -66,6 +66,17 @@ function afterRender(state) {
     });
   }
 }
+
+router
+  .on({
+    "/": () => render(),
+    ":view": params => {
+      let view = capitalize(params.data.view);
+      render(store[view]);
+    }
+  })
+  .resolve();
+
 // router.hooks({
 //   before: (done, params) => {
 //     const view =
