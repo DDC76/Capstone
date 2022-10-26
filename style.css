@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 150vh;
+    height: 120vh;
   }
 
   #motoMeetup > h2 {
@@ -74,13 +74,13 @@ form > input[type="submit"] {
 
   }
 
-  .float > nav {
+  /* .float > nav {
     float: inline-start;
     width: 500px;
     height: 200px;
     background-color: rgba(255, 255, 255, 0.709);
     border: 1px solid black;
-  }
+  } */
 
   #about {
     margin: 1rem;
@@ -109,59 +109,123 @@ form > input[type="submit"] {
      height: 180px;
   }
 
-  @media (max-width: 549px){
-    .hidden--mobile {
-      display: none !important;
+
+
+    @media (min-width: 550px) {
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0 0;
+        color:rgba(255, 255, 255, 0.709);
+      }
+      nav .fa-bars {
+        display: none;
+      }
+      /* nav {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        grid-row: auto;
+      } */
+
+      nav i {
+        padding: 1rem;
+        font-size: 2em;
+      }
+
+      /* nav > ul {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 0;
+      } */
+
+      /* nav > ul > li {
+        padding: 0.5rem;
+        list-style-type: none;
+        text-decoration: none;
+      } */
 
     }
+/* Start Updated Nav bar css */
 
-    nav {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      grid-row: auto;
+nav {
+width: 100%;
+padding: 5px 0px;
+background: rgb(181, 9, 9);
+}
+nav ul {
+text-align: center;
+padding: 2px;
+margin: 0px;
+}
+nav ul li {
+list-style-type: none;
+display: inline-block;
+margin-left: -5px;
+color: #ccc;
+font-size:20px;
+width: 200px;
+height:60px;
+line-height: 60px;
+border-left: 1px solid #fff;
+cursor: pointer;
+text-align: center;
+}
+nav i {
+margin:0px 15px;
+}
+nav ul li:hover {
+background:  rgb(247, 216, 92);
+color: white;
+font-weight: bold;
+}
 
-    }
+/* End Updated Nav bar css */
 
-    nav > i {
-      padding: 1rem;
-      font-size: 2em;
 
-    }
-
-    nav > ul {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding: 0 0;
-    }
-
-    nav > ul > li {
-      padding: 0.5rem;
-      list-style-type: none;
-    }
 
     #about img {
       float: left;
-      width: 100%;
+      width: 80%;
       height: auto;
       margin-right: 5rem;
     }
-  }
 
-  @media (min-width: 550px) {
-    nav > ul {
-      display: flex;
-      justify-content: space-evenly;
-      padding: 0 0;
-      color:rgba(255, 255, 255, 0.709);
+    #about {
+      margin-right: 10rem;
+      }
 
+      #about img {
+      float: inline-start;
+      width: 25%;
+      height: auto;
+      margin-right: 1rem;
+      }
+
+      .routeMap {
+      max-width: 1000px;
+      }
+
+    #map {
+      height: 600px;
+    }
+    p {
+      font-size: 20px;
+    }
+
+    ul {
+      font-size: 20px;
+    }
+
+    .items1 label {
+      margin-top: 3em;
+      display: table-row;
     }
 
 
-
-
-    nav > ul > li {
+    /* nav > ul > li {
       display: inline-block;
       text-decoration: none;
       border: 1px solid;
@@ -169,47 +233,6 @@ form > input[type="submit"] {
       border-radius: 2px;
     }
 
-    nav > .fa-bars {
-      display: none;
-    }
-
-    nav > .fa-ul {
-      display: inline-block;
-    }
-
-   nav > .span {
-      display: inline-block;
-    }
-
-    #about {
-      margin-right: 10rem;
-    }
-
-    #about img {
-      float: inline-start;
-      width: 25%;
-      height: auto;
-      margin-right: 1rem;
-    }
-
-    .routeMap {
-      max-width: 1000px;
-    }
-
-    #map {
-      height: 600px;
-    }
-p {
-  font-size: 20px;
-}
-ul {
-  font-size: 20px;
-}
-
-.items1 > label {
-  margin-top: 3em;
-  display: table-row;
-}
 
 /* NEW FORM CSS*/
 /* reset */
