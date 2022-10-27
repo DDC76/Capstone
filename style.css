@@ -5,27 +5,24 @@
 #motoMeetup {
     background: url(assets/bike_event1.jpeg) center center no-repeat; background-size: cover;
     background-size: cover;
-    margin-top: .25in;
-    display: flex;
+    margin-top: 0;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 120vh;
+    display: flex;
+    align-items: center;
   }
 
   #motoMeetup > h2 {
     color: rgb(247, 216, 92);
     text-align: start;
-    display: inline flow;
-    font-size: 4.5em;
-    margin-block-start: 3in;
-    margin-block-end: 10in;
-    margin-inline-start: 200px;
-    margin-inline-end: 200px;
-    margin-top: .5em;
-    margin-left: .75em;
+    font-size: 3.75em;
+    margin-block-end:10in;
+    margin-top: 1em;
+    padding: 0px 20px 0px 20px;
     font-weight: bold;
+    flex-wrap: wrap;
   }
+
 #motoMeetup button {
   border: 0;
   line-height: 2.5;
@@ -50,9 +47,6 @@
               inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
-
-
-
   .weather > h3 {
     text-align: start;
     color: rgb(185, 0, 0);
@@ -67,24 +61,6 @@
     border-radius: 10px;
   }
 
-  /* form {
-    border: solid 1px black;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 1rem;
-  }
-
-  form > * {
-    margin: 0.5rem;
-  }
-
-form > input[type="submit"] {
-    width: 40%;
-    margin: 0.5rem;
-    margin-right: auto;
-  }
- */
-
   footer {
     margin: 3rem;
   }
@@ -97,16 +73,7 @@ form > input[type="submit"] {
     border: 5px solid rgb(0, 0, 0);
     display: flow-root;
     padding: 30px 30px 30px 50px;
-
   }
-
-  /* .float > nav {
-    float: inline-start;
-    width: 500px;
-    height: 200px;
-    background-color: rgba(255, 255, 255, 0.709);
-    border: 1px solid black;
-  } */
 
   #about {
     margin: 1rem;
@@ -135,24 +102,21 @@ form > input[type="submit"] {
      height: 180px;
   }
 
-
-
     @media (min-width: 550px) {
       nav ul {
-        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 0 0;
       }
-      nav .fa-bars {
+      /* nav .fa-bars {
         display: none;
-      }
-      /* nav {
+      } */
+      nav {
         display: flex;
         align-items: center;
         flex-direction: column;
         grid-row: auto;
-      } */
+      }
 
       nav i {
         padding: 1rem;
@@ -180,11 +144,14 @@ width: 100%;
 padding: 5px 0px;
 background: rgb(255, 200, 0);
 }
+
 nav ul {
 text-align: center;
 padding: 10px;
 margin: 0px;
 }
+
+
 nav ul li {
 list-style-type: none;
 display: inline-block;
@@ -198,6 +165,7 @@ border-left: 1px solid #fff;
 cursor: pointer;
 text-align: center;
 }
+@media (min-width: 550px) {
 nav i {
 margin: 0px 15px;
 }
@@ -228,7 +196,7 @@ font-weight: bold;
       height: auto;
       margin-right: 1rem;
       }
-
+    }
       .routeMap {
       max-width: 1000px;
       }

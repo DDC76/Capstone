@@ -7,6 +7,7 @@ export default () => html`
   <h1><i>Welcome to MotoMeetup!</i></h1>
   <img src='https://www.cowartinsurance.com/images/news/48390/13462/large/motorcycle-group.jpg'
       alt="Let's Ride!"/>
+
   <h2><i>The place where motorcyclist connect.</i></h2>
 
       </div>
