@@ -22,13 +22,66 @@ function render(state = store.Home) {
   router.updatePageLinks();
 }
 
-function afterRender(st) {
+function afterRender(state) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
-  if (st.view === "Groups") {
+  if (state.view === "Direction") {
+    const formEntry = document.querySelector("form");
+    const directionList = document.querySelector(".directions");
+
+    formEntry.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      console.log("matsinet-event:", event);
+
+      // directionList.classList.toggle("directions");
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const from = {
+        street: inputList.fromStreet.value,
+        city: inputList.fromCity.value,
+        state: inputList.fromStreet.value
+      };
+
+      store.Direction.from = from;
+      store.Map.from = from;
+
+      const to = {
+        street: inputList.toStreet.value,
+        city: inputList.toCity.value,
+        state: inputList.toStreet.value
+      };
+
+      store.Direction.to = to;
+      store.Map.to = to;
+
+      if (event.submitter.name === "showDirections") {
+        axios
+          .get(
+            `http://www.mapquestapi.com/directions/v2/route?key=${process.env.MAPQUEST_API_KEY}&from=${from.street},${from.city},${from.state}&to=${to.street},+${to.city},+${to.state}`
+          )
+          .then(response => {
+            store.Direction.directions = response.data;
+            store.Direction.directions.maneuvers =
+              response.data.route.legs[0].maneuvers;
+            router.navigate("/Direction");
+          })
+          .catch(error => {
+            console.log("It puked", error);
+          });
+      }
+
+      if (event.submitter.name === "showRoute") {
+        router.navigate("/Map");
+      }
+    });
+  }
+
+  if (state.view === "Groups") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
 
@@ -36,7 +89,7 @@ function afterRender(st) {
       console.log("Input Element List", inputList);
 
       const suggestedItems = [];
-      // Interate over the items input group elements
+      // Iterate over the items input group elements
       for (let input of inputList.suggestedItems) {
         // If the value of the checked attribute is true then add the value to the items array
         if (input.checked) {
@@ -66,6 +119,7 @@ function afterRender(st) {
     });
   }
 }
+
 router.hooks({
   before: (done, params) => {
     const view =
@@ -98,6 +152,7 @@ router.hooks({
             done();
           })
           .catch(err => console.log(err));
+
         break;
       case "Myriders":
         axios
@@ -114,6 +169,14 @@ router.hooks({
       default:
         done();
     }
+  },
+  already: params => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    render(store[view]);
   }
 });
 
