@@ -89,7 +89,7 @@ function afterRender(state) {
       console.log("Input Element List", inputList);
 
       const suggestedItems = [];
-      // Interate over the items input group elements
+      // Iterate over the items input group elements
       for (let input of inputList.suggestedItems) {
         // If the value of the checked attribute is true then add the value to the items array
         if (input.checked) {
