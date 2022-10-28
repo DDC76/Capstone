@@ -38,8 +38,6 @@ export default () => html`
         </div>
         <div>
           <label for="suggestedItems">Suggested Items:</label>
-
-          <label for="top1">Helmet</label>
           <input
             type="checkbox"
             id="id_of_checkbox1"
@@ -47,7 +45,7 @@ export default () => html`
             name="suggestedItems"
             value="Helmet"
           />
-          <label for="top2">Gloves</label>
+          <label for="top1">Helmet</label>
           <input
             type="checkbox"
             id="id_of_checkbox2"
@@ -55,7 +53,7 @@ export default () => html`
             name="suggestedItems"
             value="Gloves"
           />
-          <label for="top3">Jacket</label>
+          <label for="top2">Gloves</label>
           <input
             type="checkbox"
             id="id_of_checkbox3"
@@ -63,7 +61,7 @@ export default () => html`
             name="suggestedItems"
             value="Jacket"
           />
-          <label for="top4">Boots</label>
+          <label for="top3">Jacket</label>
           <input
             type="checkbox"
             id="id_of_checkbox4"
@@ -71,7 +69,7 @@ export default () => html`
             name="suggestedItems"
             value="Boots"
           />
-          <label for="top5">Backpack</label>
+          <label for="top4">Boots</label>
           <input
             type="checkbox"
             id="id_of_checkbox5"
@@ -79,6 +77,7 @@ export default () => html`
             name="suggestedItems"
             value="Backpack"
           />
+          <label for="top5">Backpack</label>
         </div>
         <input
           type="hidden"

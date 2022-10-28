@@ -2,7 +2,7 @@ import html from "html-literal";
 
 export default state => html`
   <section id="motoMeetup">
-    <h2>MotoMeetup: <i>Social Network for Motorcyclists</i></h2>
+    <h2>MotoMeetup: <i>Connect and Ride!</i></h2>
     <button class="registerButton" type="button">
       <a href="/Register" title="Register/Sign-in" data-navigo="">Register</a>
     </button>

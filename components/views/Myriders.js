@@ -3,7 +3,7 @@ import html from "html-literal";
 export default st => html`
   <table id="myRiders">
     <tr>
-      <th>Groups</th>
+      <th>Group</th>
       <th>Meetup</th>
       <th>Time</th>
       <th>Suggested Items</th>

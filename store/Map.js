@@ -1,5 +1,5 @@
 export default {
-  header: "Let's plan a route!",
+  header: "Check out the route:",
   view: "Map",
   from: {},
   to: {}

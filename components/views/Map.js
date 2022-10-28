@@ -1,7 +1,9 @@
 import html from "html-literal";
 
 export default state => html`
-  <h2>Route Map</h2>
+  <div class="title">
+    <h2>Route Map</h2>
+  </div>
   <div class="routeMap">
     ${outputMap(state)}
   </div>

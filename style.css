@@ -108,9 +108,9 @@
         justify-content: space-evenly;
         padding: 0 0;
       }
-      /* nav .fa-bars {
+      nav .fa-bars {
         display: none;
-      } */
+      }
       nav {
         display: flex;
         align-items: center;
@@ -205,11 +205,11 @@ font-weight: bold;
       height: 600px;
     }
     p {
-      font-size: 20px;
+      font-size: 30px;
     }
 
     ul {
-      font-size: 20px;
+      font-size: 30px;
     }
 
     .items1 label {
@@ -245,10 +245,16 @@ form label,
   grid-auto-columns: auto;
   grid: inherit;
   padding: 1em;
-  margin: 0;
+  margin: 10px;
   -webkit-appearance: radio;
   -moz-appearance: none;
 }
+form,
+.direction {
+  margin: 15px;
+  padding: 0 0 0 1rem;
+}
+
 form input,
 .inviteForm {
   display: flex;
@@ -322,9 +328,14 @@ form [type="reset"]:focus {
 form select {
   text-transform: none;
 }
-#map {
-  margin: 0;
+.routeMap {
+  display:block;
   padding: 0;
   height: 60vh;
 }
-
+.title > h2 {
+margin-left: 50px;
+}
+.dirHeader {
+  margin-left: 40px;
+}
