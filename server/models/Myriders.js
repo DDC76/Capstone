@@ -9,7 +9,7 @@ const motoSchema = new mongoose.Schema({
   groups: {
     type: String,
     required: true,
-    enum: ["Family", "Friends", "New Group", "Single Rider"]
+    enum: ["Family", "Friends", "New Group", "Solo Rider"]
   },
   meetup: {
     type: String,
